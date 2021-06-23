@@ -46,13 +46,18 @@ public class SequencePairWeight {
 	         
 	    // Print the subarray and increment the starting point
 	    else
-	    {
-	        System.out.print("[");
-	        for (int i = start; i < end; i++){
-	            System.out.print(arr[i]+", ");
+	    {	
+	    	int size = end -start +1;
+	    	int[] ans = new int[size];
+	    	int l = 0;
+	        
+	        for (int i = start; i <= end; i++){
+	        	ans[l] = arr[i];
+	        	l++;
+	            
 	        }
 	         
-	        System.out.println(arr[end]+"]");
+	        
 	        printSubArrays(arr, start + 1, end);
 	    }
 	     
@@ -60,18 +65,22 @@ public class SequencePairWeight {
 	}
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int t = sc.nextInt();
-		while(t-- > 0) {
-			int n = sc.nextInt();
-			int[] arr = new int[n];
-			for(int i = 0; i < n; i++) {
-				arr[i] = sc.nextInt();
-			}
-			System.out.println(finalCount(arr));
-		}
+//		Scanner sc = new Scanner(System.in);
+//		int t = sc.nextInt();
+//		while(t-- > 0) {
+//			int n = sc.nextInt();
+//			int[] arr = new int[n];
+//			for(int i = 0; i < n; i++) {
+//				arr[i] = sc.nextInt();
+//			}
+//			printSubArrays(arr, 0, 0);
+//			System.out.println(finalCount(arr));
+//		}
+//		
+//		sc.close();
+		int[] arr = {1,1,2,2,1};
+		System.out.println(countPair(arr));
 		
-		sc.close();
 	}
 
 }
